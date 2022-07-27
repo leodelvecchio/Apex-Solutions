@@ -1,0 +1,15 @@
+@istest
+public class SeparateMultiPicklistValuesTest {
+    
+    @isTest
+    public static void testSeparateMPValues() {
+    
+        List<SeparateMultiPicklistValues.EntradaTO> entrada = new List<SeparateMultiPicklistValues.EntradaTO>();
+        SeparateMultiPicklistValues.EntradaTO input = new SeparateMultiPicklistValues.EntradaTO();
+        
+        input.MultiPicklistValue = 'test1;test2;test3';
+        entrada.add(input);
+        
+        List<SeparateMultiPicklistValues.SaidaTO> outputlist = SeparateMultiPicklistValues.getLista(entrada);        
+    }
+}
