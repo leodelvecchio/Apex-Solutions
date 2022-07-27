@@ -1,0 +1,32 @@
+public class CleanDocIdOnlyNumbers {
+    public class EntradaTO {
+        @invocableVariable(required=true)
+        public String IdInicial;
+    }
+    
+    public class SaidaTO {
+
+        @invocableVariable(required=true)
+        public String IdInicialAjustado;
+    }
+	@invocableMethod(label='Clean Doc ID Only Numbersr')
+    public static List<SaidaTO> getCleanDocID(List<EntradaTO> listInput){
+
+        List<SaidaTO> listOutput = new List<SaidaTO>();
+        SaidaTO output = new SaidaTO();
+        EntradaTO input = listInput[0];
+
+        String identifier = input.IdInicial.replaceAll('\\D', '');
+        
+        if(identifier == null || identifier == ''){
+            identifier = '000000000';
+        }
+        
+        output.IdInicialAjustado = identifier;
+        listOutput.add(output);
+        
+        return listOutput;
+  
+    }
+
+}
