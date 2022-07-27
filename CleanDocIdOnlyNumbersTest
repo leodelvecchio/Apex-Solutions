@@ -1,0 +1,14 @@
+@istest
+public class CleanDocIdOnlyNumbersTest {
+    
+    @isTest
+    public static void testDocIdCleaned() {
+        List<CleanDocIdOnlyNumbers.EntradaTO> listInput = new List<CleanDocIdOnlyNumbers.EntradaTO>();
+        CleanDocIdOnlyNumbers.EntradaTO input = new CleanDocIdOnlyNumbers.EntradaTO();
+        
+        input.IdInicial = '000.111.222-33';
+        listInput.add(input);
+        
+        List<CleanDocIdOnlyNumbers.SaidaTO> Identificador = CleanDocIdOnlyNumbers.getIdentificadorLimpo(listInput);        
+    }
+}
