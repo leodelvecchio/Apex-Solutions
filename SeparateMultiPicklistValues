@@ -1,0 +1,25 @@
+public class SeparateMultiPicklistValues {
+    public class EntradaTO {
+        @invocableVariable(required=true)
+        public String MultiPicklistValue;
+    }
+    public class SaidaTO {
+        @invocableVariable(required=true)
+        public List<String> lista;
+    }
+    @InvocableMethod(label='Separar em lista')
+    public static List<SaidaTO> getLista(List<EntradaTO> listInput){
+        
+        List<SaidaTO> listOutput = new List<SaidaTO>();
+        SaidaTO output = new SaidaTO();
+        EntradaTO input = listInput[0];
+        
+        List<String> OutputList = input.MultiPicklistValue.split(';');
+        
+        output.lista = OutputList;
+        listOutput.add(output);
+        
+        return listOutput;
+    }    
+}
+
