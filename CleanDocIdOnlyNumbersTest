@@ -9,6 +9,6 @@ public class CleanDocIdOnlyNumbersTest {
         input.IdInicial = '000.111.222-33';
         listInput.add(input);
         
-        List<CleanDocIdOnlyNumbers.SaidaTO> Identificador = CleanDocIdOnlyNumbers.getIdentificadorLimpo(listInput);        
+        List<CleanDocIdOnlyNumbers.SaidaTO> DocId = CleanDocIdOnlyNumbers.getCleanDocID(listInput);        
     }
 }
